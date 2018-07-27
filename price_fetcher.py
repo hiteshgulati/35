@@ -14,9 +14,9 @@ def get_quote_from_quandl (quandl_code, fetch_date = datetime.today(), type = "C
     except IndexError:
         quote = get_quote_from_quandl(quandl_code,fetch_date + timedelta(1), type)
     except quandl.errors.quandl_error.NotFoundError:
-        quote = 0
-    except:
         quote = -1
+    except:
+        quote = -2
     return quote
 
 
